@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<!--
+/**
+* Copyright © 2023 IABA. All rights reserved.
+* See COPYING.txt for license details.
+*/
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+
+        <section id="discount_customer_group" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+            <class>separator-top</class>
+            <label>Descontos Por Grupo de Usario</label>
+            <tab>pb_store</tab>
+            <resource>PbStore_CatalogIntegrations::config_pbstore_catalogintegrations</resource>
+
+            <group id="general" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Geral</label>
+                <field id="enabled" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="0" canRestore="1">
+                    <label>Habilitar Módulo</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+
+            </group>
+            <group id="discount_groups" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Discount Groups</label>
+                <field id="groups_client_person" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="0" canRestore="1">
+                    <label>Cliente Pessoa Física - CPF</label>
+                    <validate>validate-number</validate>
+                    <comment>Enter a valid number.</comment>
+                </field>
+                <field id="groups_client_legal_free_tax" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Pessoa Jurídica CNPJ Isento I.E</label>
+
+                </field>
+                <field id="groups_client_legal_tax" translate="label" type="text" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Pessoa Jurídica CNPJ C/ I.E</label>
+                    <validate>validate-number</validate>
+                    <comment>Enter a valid number.</comment>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

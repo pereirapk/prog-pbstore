@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <discount_customer_group>
+            <general>
+                <enable>0</enable>
+            </general>
+            <discount_groups>
+                <groups_client_person>10</groups_client_person>
+                <groups_client_legal_free_tax>10</groups_client_legal_free_tax>
+                <groups_client_legal_tax>10</groups_client_legal_tax>
+            </discount_groups>
+        </discount_customer_group>
+    </default>
+</config>

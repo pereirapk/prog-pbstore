@@ -1,0 +1,38 @@
+<?php
+    /** @var $block \PbStore\DiscountByCustomerGroup\Block\PriceTab */
+    $price = $block->getProductPrice();
+    $groups= $block->getGroups();
+
+?>
+<div id="custom-tabs" data-bind="scope: 'customTabs'">
+    <ul class="pricetab">
+        <?php if(!empty($groups)):?>
+            <?php foreach ($groups as $group): ?>
+                <li class="customer-code">
+                    <a href="#" data-bind="click: function() { selectTab('tab<?=$group->getId()?>'); }, css: { active: selectedTab() === 'tab<?=$group->getId()?>' }"><?=$group->getCode()?></a>
+                </li>
+            <?php endforeach;?>
+        <?php endif;?>
+    </ul>
+    <?php if(!empty($groups)):?>
+        <?php foreach ($groups as $group): ?>
+            <div data-bind="visible: selectedTab() === 'tab<?=$group->getId()?>'">
+                <h2><?= $block->calculatePrice($group->getId())?></h2>
+            </div>
+        <?php endforeach;?>
+    <?php endif;?>
+
+</div>
+<script type="text/x-magento-init">
+    {
+        "#custom-tabs": {
+            "Magento_Ui/js/core/app": {
+                "components": {
+                    "customTabs": {
+                        "component": "PbStore_DiscountByCustomerGroup/js/view/price-tabs"
+                    }
+                }
+            }
+        }
+    }
+</script>

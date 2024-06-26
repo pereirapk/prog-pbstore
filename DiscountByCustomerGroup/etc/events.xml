@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Event/etc/events.xsd">
+    <event name="customer_register_success">
+        <observer name="customer_group_register_success" instance="PbStore\DiscountByCustomerGroup\Observer\Customer\SaveCustomerInGroup" disabled="false"/>
+    </event>
+    <event name="checkout_cart_product_add_after">
+        <observer name="improve_discount_on_add_to_cart" instance="PbStore\DiscountByCustomerGroup\Observer\Cart\ImproveDiscountOnAddToCart" />
+    </event>
+</config>

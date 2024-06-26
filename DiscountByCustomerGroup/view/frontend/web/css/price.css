@@ -1,0 +1,7 @@
+.pricetab {
+    display: flex;
+}
+.customer-code {
+    list-style-type: none;
+    cursor: pointer;
+}
